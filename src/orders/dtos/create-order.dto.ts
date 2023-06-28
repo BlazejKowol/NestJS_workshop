@@ -7,17 +7,17 @@ import {
   Min,
 } from 'class-validator';
 
-export class CreateProductDTO {
+export class CreateOrderDTO {
   @IsNotEmpty()
   @IsString()
-  @Length(10, 20)
-  name: string;
+  @Length(10, 80)
+  productId: string;
 
   @IsNotEmpty()
-  @IsInt()
-  @Min(0)
-  price: number;
+  @IsString()
+  @Length(8, 25)
+  client: string;
 
   @Transform(({ value }) => (Array.isArray(value) ? value.join(', ') : ''))
-  description: string;
+  address: string;
 }
