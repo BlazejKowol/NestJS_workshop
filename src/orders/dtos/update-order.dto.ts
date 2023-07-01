@@ -5,19 +5,19 @@ import {
   IsString,
   Length,
   Min,
+  IsUUID
 } from 'class-validator';
 
 export class UpdateOrderDTO {
   @IsNotEmpty()
   @IsString()
   @Length(10, 80)
+  @IsUUID()
   productId: string;
 
   @IsNotEmpty()
   @IsString()
-  @Length(8, 25)
-  client: string;
-
-  @Transform(({ value }) => (Array.isArray(value) ? value.join(', ') : ''))
-  address: string;
+  @Length(10, 80)
+  @IsUUID()
+  clientId: string;
 }

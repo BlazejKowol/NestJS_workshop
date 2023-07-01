@@ -33,8 +33,8 @@ export class OrdersController {
   }
 
   @Post('/')
-  create(@Body() productData: CreateOrderDTO) {
-    return this.ordersService.create(productData);
+  create(@Body() orderData: CreateOrderDTO) {
+    return this.ordersService.create(orderData);
   }
 
   @Put('/:id')
